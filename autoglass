@@ -1,0 +1,10 @@
+local ignorescript = "GlassFall"
+while true do
+task.wait()
+for i, v in pairs(game.Workspace.GameRunningService.GlassBridges.GlassPairs:GetDescendants()) do
+    if not v:FindFirstChild(ignorescript) and v:FindFirstChild("TouchInterest") then
+        print(v.Name .. " does not have " .. ignorescript .. " and has TouchInterest, deleting it.")
+        v:Destroy()  
+    end
+end
+end
